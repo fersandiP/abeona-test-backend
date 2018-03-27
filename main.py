@@ -21,3 +21,11 @@ def retrieve_product():
 	resp.headers['abeona-token'] = "63a51933-092b-46e1-8b14-45e250af2616"
 
 	return resp
+
+@app.route("/product/list")
+def retrieve_product_list():
+	product_lists = [
+	{'_key' : "maki", "name" : "Maki Nishikino"},
+	{'_key' : "Nico", "name" : "Nico Yazawa"}
+	]
+	return json.dumps(product_lists)
